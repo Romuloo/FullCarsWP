@@ -1,0 +1,163 @@
+*{
+    font-family: serif;
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;
+}
+:root{
+    --first-color: rgb(0, 3, 72);
+    --second-color: rgb(255, 255, 255);
+    --third-color: rgba(0,0,0,0.2);
+}
+/* HEADER */
+.nav{
+    background-color:var(--first-color);
+    padding: 20px 0;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0;
+    transition-duration: 0.5s;
+}
+.nav__ul{
+    position: fixed;
+    margin-right: -350px;
+    transition: 0.5s;
+    height: calc(100% + 17px);
+    top: -17px;
+    right: 0;
+    line-height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 5px 5px 30px 5px var(--third-color);
+    background-color:var(--second-color);
+}
+.pre__dark{
+    background-color: var(--third-color);
+    width:calc(100% - 100px);
+    height: 100%;
+    top:0;
+    right: -100%;
+    position: fixed;
+    transition: 0.5s;
+}
+.svg{
+    margin-left: 40px;
+    width: 50px;
+}
+.burger{
+    padding: 30px 40px;
+}
+.burger:hover{
+    border-radius: 30px 0 0 30px;
+    background-color: var(--third-color);
+}
+.li__a{
+    list-style: none;
+}
+.nav__a{
+    color: gray;
+    padding: 10px;
+    text-decoration: none;
+}
+/* MAIN -> SECTION */
+
+.section__main,.div{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.grow{
+    position: relative;
+    width: 100px;
+    transition-duration: 0.5s;
+}
+/* .section__main{
+    background-color: blueviolet;
+} */
+.div{
+    background:  url(../assets/pexels-uriel-mont-6271680.jpg) center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: calc(100vh - 300px);
+}
+/* Footer */
+.footer{
+    height: 300px;
+    background-color:var(--first-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.footer__a,.p__footer{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+.div__footer{
+    display: flex;
+    flex-wrap: wrap;
+}
+.social__media{
+    padding: 15px;
+    margin-left: 20px;
+}
+.p__footer{
+    margin: 5px;
+}
+.ul__footer{
+    width:150px;
+}
+/* Adding classes width JS */
+.nav-active{
+    margin-top: -150px;
+}
+.nav__ul-active{
+    margin-right: 0;
+}
+.dark{
+    right: 300px;
+}
+.body{overflow-y: hidden;}
+
+.nav__fixed{
+    background: none;
+    background-color:var(--first-color);
+    box-shadow: 5px 5px 30px 5px var(--third-color);
+    position: fixed;
+    height: 100px;
+    top: 150px;
+}
+.p__form{
+    display: none;
+}
+.p__form-check,.p__form-error{
+    display: flex
+}
+/* MediaQ and others*/
+@media(max-width:970px){
+    .div{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+/* specificity > 10 */
+.social__media:hover{
+    border-radius: 10px;
+    background-color: var(--third-color);
+}
+.nav__a:hover{
+    color: var(--first-color);
+}
+.title:hover{
+    font-size: 1.3em;
+}
+.grow:hover{
+    width: 150px;
+}

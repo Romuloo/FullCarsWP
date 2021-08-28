@@ -1,0 +1,225 @@
+*{
+    font-family: serif;
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;
+}
+:root{
+    --first-color: rgb(0, 3, 72);
+    --second-color: rgb(255, 255, 255);
+    --third-color: rgba(0,0,0,0.2);
+}
+/* HEADER */
+.nav{
+    background:url(../assets/pexels-gerd-altmann-21694.webp) no-repeat center center;
+    background-size: cover;
+    padding: 20px 0;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0;
+    transition-duration: 0.5s;
+}
+.nav__ul{
+    position: fixed;
+    margin-right: -350px;
+    transition: 0.5s;
+    height: calc(100% + 17px);
+    top: -17px;
+    right: 0;
+    line-height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 5px 5px 30px 5px var(--third-color);
+    background-color:var(--second-color);
+}
+.pre__dark{
+    background-color: var(--third-color);
+    width:calc(100% - 300px);
+    height: 100%;
+    top:0;
+    right: -100%;
+    position: fixed;
+    transition: 0.5s;
+}
+.svg{
+    margin-left: 40px;
+    width: 100px;
+}
+.burger{
+    padding: 30px 40px;
+}
+.burger:hover{
+    border-radius: 30px 0 0 30px;
+    background-color: var(--third-color);
+}
+.li__a{
+    list-style: none;
+}
+.nav__a{
+    color: gray;
+    padding: 10px;
+    text-decoration: none;
+}
+/* MAIN -> SECTION */
+.h__title,.h__color,.button{
+    font-family: 'Montserrat', sans-serif;
+}
+.article,.about,.about__two,.about__three{
+    padding: 20px;
+    border-radius:50px;
+    height: 500px;
+    width:300px;
+    overflow: hidden;
+}
+.img{
+    margin: -20px -20px;
+    width: 340px;
+}
+.article__p{
+    color: gray;
+}
+.h__color{
+    color: var(--first-color);
+}
+.section__main,.div,.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form{
+    flex-direction: column;
+    background-color: rgba(128, 128, 128, 0.075);
+}
+.input{
+    color: var(--first-color);
+    padding: 10px;
+    margin-top: 10px;
+    
+}
+.button{
+    margin: 50px;
+    padding: 0 50px;
+    border-radius: 10px;
+    height: 40px;
+    background-color: var(--first-color);
+    border: none;
+}
+.div{
+    padding: 20px;
+    max-width: 2600px;
+    display: grid;
+    grid-template-areas:"title title title"
+                        "post post adone"
+                        "post post adtwo"
+                        "post post adthree";
+    gap: 20px;
+}
+.h__title{
+    font-size: 3em;
+}
+.title{
+    transition-duration: 0.5s;
+    padding: 20px;
+    grid-area: title;
+}
+.about{
+    grid-area: adone;
+}
+.about__two{
+    grid-area: adtwo;
+}
+.about__three{
+    grid-area: adthree;
+}
+/* Footer */
+.footer{
+    height: 300px;
+    background-color:var(--first-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.footer__a,.p__footer{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+.div__footer{
+    display: flex;
+    flex-wrap: wrap;
+}
+.social__media{
+    padding: 15px;
+    margin-left: 20px;
+}
+.p__footer{
+    margin: 5px;
+}
+.ul__footer{
+    width:150px;
+}
+/* Adding classes width JS */
+.nav-active{
+    margin-top: -150px;
+}
+.nav__ul-active{
+    margin-right: 0;
+}
+.dark{
+    right: 300px;
+}
+.body{overflow-y: hidden;}
+
+.nav__fixed{
+    background: none;
+    background-color:var(--first-color);
+    box-shadow: 5px 5px 30px 5px var(--third-color);
+    position: fixed;
+    height: 100px;
+    top: 150px;
+}
+.p__form{
+    display: none;
+}
+.p__form-check,.p__form-error{
+    display: flex
+}
+/* MediaQ and others*/
+.rotate__scale {
+	animation: rotate__scale 0.65s linear both;
+}
+@keyframes rotate__scale {
+    0% {
+      transform: scale(1) rotateZ(0);
+    }
+    50% {
+      transform: scale(2) rotateZ(180deg);
+    }
+    100% {
+      transform: scale(1) rotateZ(360deg);
+    }
+  }
+@media(max-width:970px){
+    .div{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+/* specificity > 10 */
+.social__media:hover{
+    border-radius: 10px;
+    background-color: var(--third-color);
+}
+.nav__a:hover{
+    color: var(--first-color);
+}
+.title:hover{
+    font-size: 1.3em;
+}
+  
