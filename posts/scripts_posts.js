@@ -1,23 +1,17 @@
 // Efects
-
-const burger = document.getElementById("burger")
-const navUl = document.getElementById("navUl")
-const nav = document.getElementById("nav")
-const dark = document.getElementById("dark")
-const sectionMain = document.getElementById("section__main")
-const logo = document.getElementById("logo")
-const body = document.getElementsByTagName("body")[0]
-
-const activeNav = ()=>{
-    navUl.classList.toggle("nav__ul-active")
-    dark.classList.toggle("dark")
-    body.classList.toggle("body")
-}
+const burger = document.getElementById("burger"), navUl = document.getElementById("navUl"),
+    nav = document.getElementById("nav"), dark = document.getElementById("dark"),
+    sectionMain = document.getElementById("section__main"), logo = document.getElementById("logo"),
+    body = document.getElementsByTagName("body")[0], activeNav = () => {
+        navUl.classList.toggle("nav__ul-active")
+        dark.classList.toggle("dark")
+        body.classList.toggle("body")
+    };
 burger.addEventListener("click",()=>{
     activeNav()
 });
 dark.addEventListener("click",(e)=>{
-    if(e.target.id != "navUl"){
+    if(e.target.id !== "navUl"){
         activeNav()
     }
 })
@@ -82,7 +76,6 @@ const expresions = {
 
 form.addEventListener("submit", (e)=>{
     e.preventDefault();
-    const datos = new FormData(form);
     const formValues = Object.values(fields)
     console.log(formValues)
     const valid = formValues.findIndex(value => value == false)
@@ -99,3 +92,47 @@ form.addEventListener("submit", (e)=>{
 
     }
 })
+
+//JSON stuff
+const postData = [
+    {
+        postNum: 0,
+        text: "In the current market we find different types of vehicles. Within the categories established by the automotive industry there is a segment unmistakable due to its size and appearance. We are talking about compact cars. This segment corresponds to the smallest cars on the market."
+    },
+    {
+        postNum: 1,
+        text: "The future is closer than we think and innovation in electric cars with it. The automotive industry has been developing over the years the next step in ecological and environmentally friendly mobility. And we tell you, Volkswagen is not far behind."
+    },
+    {
+        postNum: 2,
+        text: "For most people, buying a vehicle is a decision that cannot be taken lightly. For example, after buying a home, buying a car becomes the next most important financial operation of their lives and one that they will surely have to repeat."
+    },
+    {
+        postNum: 3,
+        text: "You may not have much experience in washing cars, so a guide will be very good for you. Especially since a proper cleaning for your vehicle has many advantages. For example, in monetary terms, do you know how much a fumigation costs?"
+
+    },
+    {
+        postNum: 4,
+        text: "Oil levels, brake condition, engine quality and operation, and even scratches. They are just some aspects that you should take care of your vehicle. But what to do when you can't go to the garage for many days? This due to force majeure reasons, such as a quarantine."
+
+    },
+    {
+        postNum: 5,
+        text: "An exhaust system involves a series of parts and pipes. These are responsible for directing the gases produced by the engine towards the back of your car. In addition, it removes harmful substances and reduces the noise level."
+    },
+    {
+        postNum: 6,
+        text: "We are an internet forum in English oriented initially to the automotive that allows the visualization of posts on cars."
+    },
+    {
+        postNum: 7,
+        text: "Read our posts and learn more about the exciting world of cars. If you want to receive the latest updates do not hesitate to subscribe!"
+    }
+]
+
+for (let i=0; i<postData.length; i++){
+    document.getElementById("post_"+ i).innerHTML = postData[i].text
+}
+
+
