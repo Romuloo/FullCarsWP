@@ -1,20 +1,4 @@
-// Efects
-const burger = document.getElementById("burger"), navUl = document.getElementById("navUl"),
-    nav = document.getElementById("nav"), dark = document.getElementById("dark"),
-    sectionMain = document.getElementById("section__main"), logo = document.getElementById("logo"),
-    body = document.getElementsByTagName("body")[0], activeNav = () => {
-        navUl.classList.toggle("nav__ul-active")
-        dark.classList.toggle("dark")
-        body.classList.toggle("body")
-    };
-burger.addEventListener("click",()=>{
-    activeNav()
-});
-dark.addEventListener("click",(e)=>{
-    if(e.target.id !== "navUl"){
-        activeNav()
-    }
-})
+
 window.addEventListener("scroll", ()=>{
     const relNav = sectionMain.getBoundingClientRect(); 
     if(relNav.y < 0){
@@ -52,8 +36,8 @@ const checkForm = (e) =>{
     }
 }
 
-const validateField = (expresion,input,field) =>{
-    if(expresion.test(input.value)){
+const validateField = (expression,input,field) =>{
+    if(expression.test(input.value)){
         document.getElementById("p__form-error").classList.remove("p__form-error")
 
         fields[field] = true
